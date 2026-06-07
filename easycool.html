@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="EasyCool Group — Premium Air Conditioning in Sri Lanka. TCL · Daikin · TECO. Fast Installation · Energy Saving · Smart Controls.">
+<title>EasyCool Group | Sri Lanka's Coolest Choice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,500&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --cream:   #faf7f2;
+  --offwhite:#f3ede4;
+  --sand:    #e8dece;
+  --tan:     #c9b89e;
+  --brown:   #7a5c3e;
+  --ink:     #1a1410;
+  --ink2:    #3d2e20;
+  --brand:   #1155cc;
+  --brand2:  #0e44a8;
+  --brand-l: #4a82e4;
+  --sky:     #d6e8ff;
+  --mint:    #0d9e6e;
+  --amber:   #d4820a;
+  --warm1:   #fff9f0;
+  --r: 18px;
+  --r2: 28px;
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Figtree',sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ── CUSTOM CURSOR ── */
+#cur { position:fixed; width:10px; height:10px; border-radius:50%; background:var(--brand); pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .2s,height .2s,background .2s; mix-blend-mode:multiply; }
+#cur2 { position:fixed; width:36px; height:36px; border-radius:50%; border:1.5px solid var(--brand); pointer-events:none; z-index:9998; transform:translate(-50%,-50%); transition:left .12s ease,top .12s ease,width .25s,height .25s; mix-blend-mode:multiply; }
+body:hover #cur { opacity:1; }
+
+/* ── SCROLL BAR ── */
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-track { background:var(--offwhite); }
+::-webkit-scrollbar-thumb { background:var(--brand); border-radius:4px; }
+
+/* ── PROGRESS ── */
+#prog { position:fixed; top:0; left:0; height:3px; width:0; background:var(--brand); z-index:9997; }
+
+/* ── NAV ── */
+nav {
+  position:sticky; top:0; z-index:500;
+  background:rgba(250,247,242,0.92);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--sand);
+}
+.nav-inner {
+  max-width:1360px; margin:0 auto; padding:0 2.5rem;
+  display:flex; align-items:center; justify-content:space-between;
+  height:68px;
+}
+.logo-wrap { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.logo-mark {
+  width:38px; height:38px; border-radius:10px; background:var(--brand);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces',serif; font-weight:700; color:#fff; font-size:1.1rem;
+  letter-spacing:-1px;
+}
+.logo-text .ln { font-family:'Fraunces',serif; font-weight:500; font-size:1.15rem; color:var(--ink); letter-spacing:-0.5px; }
+.logo-text .ls { font-size:0.58rem; color:var(--tan); letter-spacing:3px; font-weight:500; text-transform:uppercase; }
+
+.nav-links { display:flex; gap:2.5rem; list-style:none; }
+.nav-links a { text-decoration:none; color:var(--ink2); font-size:0.87rem; font-weight:400; transition:color .2s; }
+.nav-links a:hover { color:var(--brand); }
+
+.nav-right { display:flex; align-items:center; gap:12px; }
+.btn-tel {
+  display:flex; align-items:center; gap:7px; text-decoration:none;
+  color:var(--ink2); font-size:0.82rem; font-weight:400;
+  padding:9px 16px; border:1px solid var(--sand); border-radius:50px;
+  transition:all .2s;
+}
+.btn-tel:hover { border-color:var(--brand); color:var(--brand); }
+.btn-cta {
+  background:var(--brand); color:#fff;
+  font-family:'Figtree',sans-serif; font-weight:600; font-size:0.8rem;
+  padding:10px 20px; border-radius:50px; border:none; cursor:none;
+  letter-spacing:0.3px; transition:all .2s;
+}
+.btn-cta:hover { background:var(--brand2); transform:translateY(-1px); }
+.hamburger { display:none; background:none; border:none; cursor:none; color:var(--ink); font-size:1.3rem; }
+
+/* ── MOBILE MENU ── */
+#mob-menu {
+  display:none; flex-direction:column; gap:1.5rem;
+  background:var(--warm1); padding:2rem 2.5rem;
+  border-bottom:1px solid var(--sand);
+}
+#mob-menu a { text-decoration:none; color:var(--ink2); font-size:1rem; font-weight:400; }
+#mob-menu a:hover { color:var(--brand); }
+
+/* ── HERO ── */
+#home {
+  min-height:100vh; display:flex; align-items:center;
+  background:var(--cream);
+  position:relative; overflow:hidden;
+}
+.hero-bg-shape {
+  position:absolute; right:-80px; top:0; bottom:0;
+  width:52vw; background:var(--sky);
+  clip-path:polygon(8% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index:0;
+}
+.hero-bg-circle {
+  position:absolute; right:10vw; top:50%; transform:translateY(-50%);
+  width:420px; height:420px; border-radius:50%;
+  background:rgba(17,85,204,0.07); z-index:1;
+}
+.hero-inner {
+  max-width:1360px; margin:0 auto; padding:7rem 2.5rem 5rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+  position:relative; z-index:2; width:100%;
+}
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#fff; border:1px solid var(--sand);
+  font-size:0.68rem; font-weight:600; letter-spacing:2.5px; color:var(--brand);
+  text-transform:uppercase; padding:7px 16px; border-radius:50px;
+  margin-bottom:1.8rem;
+}
+.dot-live { width:6px; height:6px; border-radius:50%; background:var(--mint); animation:blink 1.6s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+
+.hero-h1 {
+  font-family:'Fraunces',serif; font-size:clamp(3rem,5.5vw,5.5rem);
+  font-weight:700; line-height:0.98; letter-spacing:-3px; color:var(--ink);
+  margin-bottom:1.8rem;
+}
+.hero-h1 em { font-style:italic; color:var(--brand); }
+
+.hero-p { font-size:1rem; line-height:1.7; color:var(--ink2); max-width:440px; margin-bottom:2.8rem; font-weight:300; }
+
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:3rem; }
+.btn-hero-main {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--brand); color:#fff;
+  font-family:'Figtree',sans-serif; font-weight:600; font-size:0.88rem;
+  padding:15px 28px; border-radius:50px; border:none; cursor:none;
+  transition:all .25s; letter-spacing:0.2px;
+}
+.btn-hero-main:hover { background:var(--brand2); transform:translateY(-2px); }
+.btn-hero-sec {
+  display:inline-flex; align-items:center; gap:8px;
+  color:var(--ink2); font-size:0.88rem; font-weight:400;
+  padding:15px 24px; border-radius:50px; border:1px solid var(--sand);
+  background:none; cursor:none; transition:all .25s; text-decoration:none;
+}
+.btn-hero-sec:hover { border-color:var(--brand); color:var(--brand); }
+
+.hero-social-proof { display:flex; align-items:center; gap:16px; }
+.avatars { display:flex; }
+.avatars span {
+  width:34px; height:34px; border-radius:50%;
+  border:2px solid var(--cream); display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces',serif; font-weight:700; font-size:0.72rem; margin-left:-8px;
+}
+.avatars span:first-child { margin-left:0; }
+.sp-text { font-size:0.78rem; color:var(--ink2); }
+.sp-text strong { color:var(--ink); font-weight:600; }
+
+/* Showroom Visual */
+.hero-vis { display:flex; flex-direction:column; align-items:center; gap:0; position:relative; }
+.showroom-wrap { width:100%; max-width:460px; }
+.photo-frame {
+  position:relative; border-radius:24px; overflow:hidden;
+  box-shadow:0 28px 64px rgba(26,20,16,0.18);
+  border:1px solid var(--sand);
+}
+.hero-photo {
+  width:100%; display:block; height:380px; object-fit:cover;
+  object-position:center 40%;
+}
+.photo-badge {
+  position:absolute; background:rgba(255,255,255,0.95);
+  border:1px solid rgba(255,255,255,0.6);
+  border-radius:50px; padding:8px 16px;
+  font-size:0.72rem; font-weight:600; color:var(--ink);
+  backdrop-filter:blur(8px);
+  box-shadow:0 4px 16px rgba(26,20,16,0.12);
+  display:flex; align-items:center; gap:6px;
+}
+.pb-dot { width:7px; height:7px; border-radius:50%; animation:blink 1.6s infinite; }
+.pb-tl { top:16px; left:16px; }
+.pb-tr { top:16px; right:16px; color:var(--amber); }
+.pb-br { bottom:16px; right:16px; color:var(--ink2); }
+.showroom-chips {
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:center;
+  margin-top:.8rem;
+}
+.sr-chip {
+  background:#fff; border:1px solid var(--sand); border-radius:50px;
+  padding:7px 14px; font-size:0.72rem; font-weight:500; color:var(--ink2);
+  display:flex; align-items:center; gap:6px;
+  box-shadow:0 2px 8px rgba(26,20,16,0.06);
+}
+
+/* ── MARQUEE ── */
+.marquee-wrap {
+  background:var(--brand); padding:14px 0; overflow:hidden;
+  border-top:none; position:relative; z-index:2;
+}
+.marquee-track {
+  display:flex; gap:4rem; white-space:nowrap;
+  animation:marquee 22s linear infinite;
+}
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marquee-item { color:rgba(255,255,255,0.75); font-size:0.72rem; font-weight:600; letter-spacing:3px; text-transform:uppercase; }
+.marquee-item span { color:#fff; }
+
+/* ── SECTION COMMON ── */
+section { position:relative; }
+.wrap { max-width:1360px; margin:0 auto; padding:6rem 2.5rem; }
+.sec-eyebrow { display:block; font-size:0.65rem; font-weight:700; letter-spacing:3.5px; color:var(--brand); text-transform:uppercase; margin-bottom:1rem; }
+.sec-h2 { font-family:'Fraunces',serif; font-size:clamp(2.2rem,3.5vw,3.2rem); font-weight:700; color:var(--ink); letter-spacing:-1.5px; line-height:1.05; }
+
+/* ── SERVICES ── */
+#services { background:var(--warm1); border-top:1px solid var(--sand); }
+.svc-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3.5rem; gap:2rem; flex-wrap:wrap; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.svc-card {
+  background:#fff; border:1px solid var(--sand); border-radius:var(--r2);
+  padding:2.5rem; transition:all .35s cubic-bezier(.4,0,.2,1); cursor:none;
+  position:relative; overflow:hidden;
+}
+.svc-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:var(--brand); transform:scaleX(0); transform-origin:left; transition:transform .35s ease;
+}
+.svc-card:hover { transform:translateY(-6px); box-shadow:0 20px 48px rgba(17,85,204,0.1); border-color:transparent; }
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-icon {
+  width:52px; height:52px; border-radius:14px; background:var(--sky);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.4rem; color:var(--brand); margin-bottom:1.5rem;
+}
+.svc-card h3 { font-family:'Fraunces',serif; font-size:1.2rem; font-weight:500; color:var(--ink); margin-bottom:.7rem; }
+.svc-card p { font-size:0.86rem; line-height:1.7; color:var(--ink2); font-weight:300; }
+.svc-num { position:absolute; top:2rem; right:2rem; font-family:'Fraunces',serif; font-size:2rem; font-weight:300; color:var(--sand); }
+
+/* ── BRANDS ── */
+#products { background:var(--cream); }
+.brands-intro { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:end; margin-bottom:4rem; }
+.brands-desc { font-size:0.95rem; line-height:1.7; color:var(--ink2); font-weight:300; }
+.brands-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+.brand-card {
+  background:#fff; border:1px solid var(--sand); border-radius:var(--r2);
+  overflow:hidden; cursor:none; transition:all .35s cubic-bezier(.4,0,.2,1);
+}
+.brand-card:hover { transform:translateY(-8px); box-shadow:0 24px 56px rgba(26,20,16,0.1); border-color:var(--sand); }
+.brand-thumb {
+  height:160px; display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces',serif; font-weight:700; font-size:2.8rem; letter-spacing:-3px;
+  position:relative; overflow:hidden;
+}
+.brand-thumb::before {
+  content:''; position:absolute; inset:0;
+  background:inherit; filter:blur(0); transition:transform .4s ease;
+}
+.brand-card:hover .brand-thumb::before { transform:scale(1.08); }
+.tcl-t    { background:#dce9ff; color:var(--brand2); }
+.daikin-t { background:#ede0ff; color:#5020b0; }
+.teco-t   { background:#ffe8d6; color:#8a3000; }
+.solar-t  { background:#d9f4e5; color:#096c3d; }
+.brand-body { padding:1.4rem; }
+.brand-label { font-size:0.6rem; font-weight:700; letter-spacing:2.5px; color:var(--tan); text-transform:uppercase; margin-bottom:.35rem; display:block; }
+.brand-body h4 { font-family:'Fraunces',serif; font-size:1rem; font-weight:500; color:var(--ink); margin-bottom:.3rem; }
+.brand-body p  { font-size:0.76rem; color:var(--ink2); margin-bottom:.8rem; font-weight:300; }
+.brand-price { font-family:'Fraunces',serif; font-size:1rem; font-weight:700; color:var(--ink); }
+.brand-soon { color:var(--mint); font-size:0.75rem; font-weight:500; margin-top:.35rem; display:block; }
+.btn-waitlist {
+  margin-top:.9rem; padding:7px 18px; border-radius:50px;
+  border:1px solid var(--sand); color:var(--ink2); font-size:0.7rem; font-weight:600;
+  background:none; cursor:none; transition:all .2s; letter-spacing:.5px;
+}
+.btn-waitlist:hover { background:var(--brand); color:#fff; border-color:var(--brand); }
+
+/* ── WHY US ── */
+#why-us { background:var(--offwhite); border-top:1px solid var(--sand); border-bottom:1px solid var(--sand); }
+.why-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:6rem; align-items:start; }
+.why-p { font-size:.96rem; line-height:1.75; color:var(--ink2); margin:1.5rem 0 2.5rem; font-weight:300; }
+.checklist { display:flex; flex-direction:column; gap:.9rem; }
+.check-item { display:flex; align-items:center; gap:12px; font-size:.88rem; color:var(--ink2); }
+.check-item i { color:var(--mint); font-size:.9rem; width:20px; text-align:center; }
+
+.stats-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+.stat-card {
+  background:#fff; border:1px solid var(--sand); border-radius:var(--r2);
+  padding:2rem; transition:all .3s; cursor:none;
+}
+.stat-card:hover { border-color:var(--brand); transform:translateY(-3px); }
+.stat-icon { font-size:1.4rem; color:var(--brand); margin-bottom:.8rem; }
+.stat-val { font-family:'Fraunces',serif; font-size:2rem; font-weight:700; color:var(--ink); line-height:1; margin-bottom:.4rem; letter-spacing:-1px; }
+.stat-lbl { font-size:0.78rem; color:var(--ink2); line-height:1.4; font-weight:300; }
+
+/* ── TESTIMONIALS ── */
+#testimonials { background:var(--cream); }
+.testi-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3.5rem; gap:2rem; flex-wrap:wrap; }
+.overall-score { text-align:right; }
+.big-score { font-family:'Fraunces',serif; font-size:4rem; font-weight:700; color:var(--ink); letter-spacing:-2px; line-height:1; }
+.big-score-sub { font-size:.75rem; color:var(--ink2); margin-top:4px; }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.testi-card {
+  background:#fff; border:1px solid var(--sand);
+  border-radius:var(--r2); padding:2rem;
+  transition:all .3s; cursor:none;
+}
+.testi-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(26,20,16,0.08); }
+.testi-stars { color:var(--amber); font-size:.9rem; margin-bottom:1.2rem; letter-spacing:2px; }
+.testi-text { font-family:'Fraunces',serif; font-style:italic; font-size:1rem; line-height:1.65; color:var(--ink2); margin-bottom:1.5rem; font-weight:300; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.t-av { width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:.78rem; }
+.t-name { font-size:.86rem; font-weight:600; color:var(--ink); }
+.t-meta { font-size:.7rem; color:var(--tan); margin-top:2px; }
+
+/* ── CONTACT ── */
+#contact { background:var(--ink); }
+.contact-grid { display:grid; grid-template-columns:1.3fr 1fr; gap:6rem; align-items:start; }
+.contact-sec-eyebrow { display:block; font-size:0.65rem; font-weight:700; letter-spacing:3.5px; color:var(--sky); text-transform:uppercase; margin-bottom:1rem; }
+.contact-h2 { font-family:'Fraunces',serif; font-size:clamp(2.2rem,3.5vw,3.2rem); font-weight:700; color:#fff; letter-spacing:-1.5px; line-height:1.05; }
+.contact-p { font-size:.95rem; line-height:1.7; color:rgba(255,255,255,.55); margin:1.5rem 0 2.5rem; font-weight:300; }
+
+.form-group { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem; }
+.field { display:flex; flex-direction:column; gap:6px; margin-bottom:1rem; }
+.field label { font-size:0.63rem; letter-spacing:2px; color:rgba(255,255,255,.4); text-transform:uppercase; }
+.field input, .field textarea {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+  border-radius:14px; padding:14px 18px; color:#fff;
+  font-family:'Figtree',sans-serif; font-size:.88rem; outline:none;
+  transition:border-color .2s;
+}
+.field input:focus, .field textarea:focus { border-color:var(--brand-l); }
+.field input::placeholder, .field textarea::placeholder { color:rgba(255,255,255,.25); }
+.field textarea { resize:none; width:100%; }
+.btn-send {
+  width:100%; padding:17px; border-radius:14px;
+  background:var(--brand); color:#fff;
+  font-family:'Figtree',sans-serif; font-weight:600; font-size:.88rem;
+  letter-spacing:.4px; border:none; cursor:none; transition:all .3s;
+  margin-top:.5rem;
+}
+.btn-send:hover { background:var(--brand2); transform:translateY(-2px); }
+
+.contact-info-stack { display:flex; flex-direction:column; gap:2.5rem; padding-top:.5rem; }
+.c-info-item { display:flex; gap:1rem; align-items:flex-start; }
+.c-icon { width:42px; height:42px; border-radius:12px; background:rgba(255,255,255,.07); display:flex; align-items:center; justify-content:center; font-size:1rem; color:var(--sky); flex-shrink:0; }
+.c-label { font-size:.62rem; letter-spacing:2.5px; color:var(--sky); text-transform:uppercase; margin-bottom:4px; font-weight:600; }
+.c-main  { color:#fff; font-size:.96rem; font-weight:400; }
+.c-sub   { font-size:.75rem; color:rgba(255,255,255,.4); margin-top:3px; }
+a.c-main { text-decoration:none; transition:color .2s; }
+a.c-main:hover { color:var(--sky); }
+
+/* ── FOOTER ── */
+footer { background:var(--ink); border-top:1px solid rgba(255,255,255,.06); padding:4rem 2.5rem 2.5rem; }
+.footer-inner { max-width:1360px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1.3fr; gap:3rem; }
+.footer-mark { width:34px; height:34px; border-radius:9px; background:var(--brand); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; color:#fff; font-size:1rem; margin-bottom:.8rem; }
+.footer-brand p { font-size:.78rem; color:rgba(255,255,255,.35); line-height:1.65; }
+.f-copy { margin-top:1.8rem; font-size:.65rem; color:rgba(255,255,255,.2); }
+.footer-col h5 { font-size:.6rem; letter-spacing:3px; color:rgba(255,255,255,.3); text-transform:uppercase; margin-bottom:1.2rem; }
+.footer-col ul { list-style:none; display:flex; flex-direction:column; gap:.7rem; }
+.footer-col li { font-size:.82rem; color:rgba(255,255,255,.4); cursor:none; transition:color .2s; }
+.footer-col li:hover { color:#fff; }
+.social-row { display:flex; gap:.7rem; margin-top:.5rem; }
+.soc-btn {
+  width:38px; height:38px; border-radius:10px;
+  border:1px solid rgba(255,255,255,.1);
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(255,255,255,.4); text-decoration:none; font-size:.95rem;
+  transition:all .2s;
+}
+.soc-btn:hover { border-color:var(--brand-l); color:var(--sky); background:rgba(17,85,204,.15); }
+
+/* ── MODAL ── */
+#modal {
+  display:none; position:fixed; inset:0;
+  background:rgba(26,20,16,.7); z-index:9996;
+  align-items:center; justify-content:center;
+  backdrop-filter:blur(8px); padding:1rem;
+}
+#modal.open { display:flex; }
+.modal-box {
+  background:var(--cream); border:1px solid var(--sand);
+  border-radius:var(--r2); max-width:520px; width:100%;
+  padding:2.5rem; position:relative;
+  box-shadow:0 40px 80px rgba(26,20,16,.25);
+}
+.modal-x {
+  position:absolute; top:1.2rem; right:1.2rem;
+  background:var(--offwhite); border:none; cursor:none;
+  width:34px; height:34px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; color:var(--ink2); transition:background .2s;
+}
+.modal-x:hover { background:var(--sand); }
+.modal-h { font-family:'Fraunces',serif; font-size:1.6rem; font-weight:700; color:var(--ink); letter-spacing:-1px; margin-bottom:.4rem; }
+.modal-sub { font-size:.82rem; color:var(--ink2); margin-bottom:1.8rem; font-weight:300; }
+.modal-label { font-size:.63rem; letter-spacing:2px; color:var(--tan); text-transform:uppercase; margin-bottom:.75rem; display:block; }
+.pill-row { display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+.pill {
+  flex:1; min-width:120px; padding:11px 12px; border-radius:50px; text-align:center;
+  border:1px solid var(--sand); color:var(--ink2); font-size:.78rem; background:#fff;
+  cursor:none; transition:all .2s;
+}
+.pill.active { background:var(--brand); border-color:var(--brand); color:#fff; }
+.pill:hover:not(.active) { border-color:var(--brand-l); color:var(--brand); }
+.modal-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1.5rem; }
+.modal-field input, .modal-field select {
+  width:100%; background:#fff; border:1px solid var(--sand);
+  border-radius:12px; padding:13px 16px; color:var(--ink);
+  font-family:'Figtree',sans-serif; font-size:.87rem; outline:none;
+  transition:border-color .2s; -webkit-appearance:none;
+}
+.modal-field input:focus, .modal-field select:focus { border-color:var(--brand); }
+.modal-field label { font-size:.62rem; letter-spacing:2px; color:var(--tan); text-transform:uppercase; margin-bottom:.5rem; display:block; }
+.btn-calc {
+  width:100%; padding:17px; border-radius:14px;
+  background:var(--brand); color:#fff;
+  font-family:'Figtree',sans-serif; font-weight:600; font-size:.86rem;
+  letter-spacing:.4px; border:none; cursor:none; transition:all .3s;
+}
+.btn-calc:hover { background:var(--brand2); transform:translateY(-2px); }
+
+/* ── REVEAL ANIMATION ── */
+.reveal { opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width:1100px) {
+  .brands-grid { grid-template-columns:1fr 1fr; }
+  .footer-inner { grid-template-columns:1fr 1fr; }
+  .brands-intro { grid-template-columns:1fr; gap:2rem; }
+}
+@media (max-width:840px) {
+  .nav-links, .btn-tel { display:none; }
+  .hamburger { display:block; }
+  .hero-inner { grid-template-columns:1fr; padding:5rem 1.5rem 3rem; gap:3rem; }
+  .hero-bg-shape { display:none; }
+  .hero-bg-circle { display:none; }
+  .services-grid { grid-template-columns:1fr; }
+  .why-grid { grid-template-columns:1fr; gap:3rem; }
+  .testi-grid { grid-template-columns:1fr; }
+  .contact-grid { grid-template-columns:1fr; gap:3rem; }
+  .footer-inner { grid-template-columns:1fr; gap:2rem; }
+  .form-group { grid-template-columns:1fr; }
+  .hero-vis { max-width:340px; margin:0 auto; }
+}
+@media (max-width:600px) {
+  .brands-grid { grid-template-columns:1fr; }
+  .stats-grid  { grid-template-columns:1fr; }
+  .testi-header { flex-direction:column; align-items:flex-start; }
+  .overall-score { text-align:left; }
+}
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur2"></div>
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="logo-wrap">
+      <div class="logo-mark">ec</div>
+      <div class="logo-text">
+        <div class="ln">EasyCool</div>
+        <div class="ls">Group Pvt Ltd</div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#products">Brands</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:+94763955990" class="btn-tel">
+        <i class="fa-solid fa-phone" style="font-size:.7rem;color:var(--brand);"></i> +94 76 395 5990
+      </a>
+      <button class="btn-cta" onclick="openModal()">Get a Quote</button>
+      <button class="hamburger" onclick="toggleMenu()"><i id="menuIcon" class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+  <div id="mob-menu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#products" onclick="toggleMenu()">Brands</a>
+    <a href="#why-us" onclick="toggleMenu()">Why EasyCool</a>
+    <a href="#testimonials" onclick="toggleMenu()">Stories</a>
+    <a href="tel:+94763955990" style="color:var(--brand);font-weight:600;"><i class="fa-solid fa-phone" style="margin-right:8px;"></i>+94 76 395 5990</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-circle"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">
+        <span class="dot-live"></span>
+        Official Dealer &nbsp;·&nbsp; TCL &nbsp;·&nbsp; Daikin &nbsp;·&nbsp; TECO
+      </div>
+      <h1 class="hero-h1">
+        Sri Lanka's<br><em>coolest</em><br>choice.
+      </h1>
+      <p class="hero-p">Premium inverter ACs with smart controls, 68% energy saving, and same-day installation anywhere in Kelaniya &amp; beyond.</p>
+      <div class="hero-actions">
+        <button class="btn-hero-main" onclick="openModal()">
+          Get Instant Quote <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <a href="#products" class="btn-hero-sec">
+          <i class="fa-solid fa-eye"></i> Browse Brands
+        </a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="avatars">
+          <span style="background:#dce9ff;color:var(--brand2);">CS</span>
+          <span style="background:#ede0ff;color:#5020b0;">AF</span>
+          <span style="background:#d9f4e5;color:#096c3d;">RP</span>
+          <span style="background:#ffe8d6;color:#8a3000;">MJ</span>
+        </div>
+        <div class="sp-text"><strong>4.99 / 5</strong> · Rated by 3,214 customers</div>
+      </div>
+    </div>
+
+    <div class="hero-vis">
+      <div class="showroom-wrap">
+        <div class="photo-frame">
+          <img src="image.jpg" class="hero-photo">
+          <!-- overlay badges -->
+          <div class="photo-badge pb-tl">
+            <span class="pb-dot" style="background:var(--mint)"></span> Official Dealer
+          </div>
+          <div class="photo-badge pb-tr">
+            ⚡ 68% Less Power
+          </div>
+          <div class="photo-badge pb-br">
+            ★ 4.99 · 3,214 Reviews
+          </div>
+        </div>
+        <!-- Info chips below photo -->
+        <div class="showroom-chips">
+          <div class="sr-chip"><span style="color:var(--brand);">✦</span> TCL · Daikin · TECO</div>
+          <div class="sr-chip"><span style="color:var(--mint);">●</span> Showroom Open Daily</div>
+          <div class="sr-chip"><span style="color:var(--amber);">★</span> 4.99 Rated</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track" aria-hidden="true">
+    <span class="marquee-item">✦ <span>Official Dealer</span></span>
+    <span class="marquee-item">✦ <span>TCL</span> Air Conditioners</span>
+    <span class="marquee-item">✦ <span>Daikin</span> Air Conditioners</span>
+    <span class="marquee-item">✦ <span>TECO</span> Air Conditioners</span>
+    <span class="marquee-item">✦ Same-Day <span>Installation</span></span>
+    <span class="marquee-item">✦ 24h <span>Emergency</span> Service</span>
+    <span class="marquee-item">✦ <span>68%</span> Energy Saving</span>
+    <span class="marquee-item">✦ <span>Smart</span> Wi-Fi Controls</span>
+    <span class="marquee-item">✦ <span>Official Dealer</span></span>
+    <span class="marquee-item">✦ <span>TCL</span> Air Conditioners</span>
+    <span class="marquee-item">✦ <span>Daikin</span> Air Conditioners</span>
+    <span class="marquee-item">✦ <span>TECO</span> Air Conditioners</span>
+    <span class="marquee-item">✦ Same-Day <span>Installation</span></span>
+    <span class="marquee-item">✦ 24h <span>Emergency</span> Service</span>
+    <span class="marquee-item">✦ <span>68%</span> Energy Saving</span>
+    <span class="marquee-item">✦ <span>Smart</span> Wi-Fi Controls</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="svc-header">
+      <div>
+        <span class="sec-eyebrow">Our Services</span>
+        <h2 class="sec-h2">Fast, reliable<br>cooling solutions.</h2>
+      </div>
+      <a href="#contact" class="btn-hero-sec">Book a service <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon"><i class="fa-solid fa-truck-fast"></i></div>
+        <h3>Same-Day Installation</h3>
+        <p>Professional installation anywhere in Kelaniya &amp; Greater Colombo. Our certified team arrives on time, every time — done before lunch, guaranteed.</p>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.1s">
+        <div class="svc-num">02</div>
+        <div class="svc-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>24-Hour Emergency Repair</h3>
+        <p>Breakdown at midnight? Our expert technicians reach you in under 90 minutes — any time of day or night, no extra call-out charge.</p>
+      </div>
+      <div class="svc-card reveal" style="transition-delay:.2s">
+        <div class="svc-num">03</div>
+        <div class="svc-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Smart Maintenance Plans</h3>
+        <p>Annual care with app monitoring, filter replacement &amp; free performance health checks. Peace of mind built into every plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS / PRODUCTS -->
+<section id="products">
+  <div class="wrap">
+    <div class="brands-intro">
+      <div>
+        <span class="sec-eyebrow">Official Dealer</span>
+        <h2 class="sec-h2">Premium brands<br>you can trust.</h2>
+      </div>
+      <p class="brands-desc">We are the official dealer for TCL, Daikin &amp; TECO across Sri Lanka. Every unit comes with full manufacturer warranty, local service coverage, and our EasyCool installation guarantee.</p>
+    </div>
+    <div class="brands-grid">
+      <div class="brand-card reveal">
+        <div class="brand-thumb">
+          <img src="images/tcl.png" alt="TCL AC">
+        </div>
+        <div class="brand-body">
+          <span class="brand-label">TCL</span>
+          <h4>Smart Inverter Series</h4>
+          <p>Wi-Fi 6 · AI Cooling · Voice Control</p>
+          <div class="brand-price">From Rs. 120,000/=</div>
+        </div>
+      </div>
+      <div class="brand-card reveal" style="transition-delay:.08s">
+        <div class="brand-thumb">
+          <img src="images/daikin.png" alt="Daikin AC">
+        </div>
+        <div class="brand-body">
+          <span class="brand-label">Daikin</span>
+          <h4>Premium Japanese Quality</h4>
+          <p>Ultra-quiet · R32 · 5-star Inverter</p>
+          <div class="brand-price">From Rs. 185,000/=</div>
+        </div>
+      </div>
+      <div class="brand-card reveal" style="transition-delay:.16s">
+        <div class="brand-thumb">
+          <img src="images/teco.png" alt="TECO AC">
+        </div>
+        <div class="brand-body">
+          <span class="brand-label">TECO</span>
+          <h4>Whole-Home Cooling</h4>
+          <p>Reliable · Energy Efficient · Proven</p>
+          <div class="brand-price">From Rs. 135,000/=</div>
+        </div>
+      </div>
+      <div class="brand-card reveal" style="transition-delay:.24s">
+        <div class="brand-thumb solar-t">
+          <i class="fa-solid fa-solar-panel" style="font-size:3rem;"></i>
+        </div>
+        <div class="brand-body">
+          <span class="brand-label">Coming Soon</span>
+          <h4>Solar Hybrid AC</h4>
+          <p>Zero electricity bill. Solar + battery.</p>
+          <span class="brand-soon"><i class="fa-solid fa-clock"></i> Launching June 2026</span>
+          <br>
+          <button class="btn-waitlist" onclick="alert('You\'ve been added to the waitlist! We\'ll reach out when it launches.')">Join Waitlist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="wrap">
+    <div class="why-grid">
+      <div>
+        <span class="sec-eyebrow">Why EasyCool</span>
+        <h2 class="sec-h2">Built for Sri Lankan heat &amp; humidity.</h2>
+        <p class="why-p">We understand local conditions — the power cuts, the humidity, the heat. Our systems and service are tuned specifically for Sri Lankan homes and businesses.</p>
+        <div class="checklist">
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Official dealer for 3 globally trusted brands</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Certified installers with 5+ years experience</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Full manufacturer warranty on all units</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Remote support via WhatsApp & phone</div>
+          <div class="check-item"><i class="fa-solid fa-circle-check"></i> Free post-install check at 30 days</div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+          <div class="stat-val">68%</div>
+          <div class="stat-lbl">Energy saving with latest inverter technology</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay:.1s">
+          <div class="stat-icon"><i class="fa-solid fa-volume-xmark"></i></div>
+          <div class="stat-val">19 dB</div>
+          <div class="stat-lbl">Whisper quiet — you won't even notice it's on</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay:.2s">
+          <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+          <div class="stat-val">&lt;90m</div>
+          <div class="stat-lbl">Emergency response time across Kelaniya</div>
+        </div>
+        <div class="stat-card reveal" style="transition-delay:.3s">
+          <div class="stat-icon"><i class="fa-solid fa-star"></i></div>
+          <div class="stat-val">3,200+</div>
+          <div class="stat-lbl">Verified 5-star customer reviews in Sri Lanka</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="wrap">
+    <div class="testi-header">
+      <div>
+        <span class="sec-eyebrow">Customer Stories</span>
+        <h2 class="sec-h2">Real homes.<br>Real smiles.</h2>
+      </div>
+      <div class="overall-score">
+        <div class="big-score">4.99</div>
+        <div class="big-score-sub">★★★★★ · 3,214 verified reviews</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Installed in my home last week. My electricity bill already dropped 62%. The app control is so easy even my kids use it every day!"</p>
+        <div class="testi-author">
+          <div class="t-av" style="background:#dce9ff;color:var(--brand2);">CS</div>
+          <div>
+            <div class="t-name">Chaminda Silva</div>
+            <div class="t-meta">Kelaniya · April 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:.1s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Same-day installation for my clinic. The team was professional, punctual, and the Daikin unit is simply a game changer. Highly recommend."</p>
+        <div class="testi-author">
+          <div class="t-av" style="background:#ede0ff;color:#5020b0;">AF</div>
+          <div>
+            <div class="t-name">Dr. Anushka Fernando</div>
+            <div class="t-meta">Kelaniya · March 2026</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:.2s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Best AC company in Sri Lanka. They repaired my unit in 45 minutes flat, at 11 PM. I cannot recommend them highly enough."</p>
+        <div class="testi-author">
+          <div class="t-av" style="background:#d9f4e5;color:#096c3d;">RP</div>
+          <div>
+            <div class="t-name">Ravi Perera</div>
+            <div class="t-meta">Business Owner · Kelaniya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <span class="contact-sec-eyebrow">Get In Touch</span>
+        <h2 class="contact-h2">Ready to cool<br>down your space?</h2>
+        <p class="contact-p">Free quote for your home, office or hotel anywhere in Sri Lanka. We respond within minutes.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <div class="field">
+              <label>Your Name</label>
+              <input type="text" placeholder="e.g. Chaminda Silva" required>
+            </div>
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="tel" placeholder="+94 76 XXX XXXX" required>
+            </div>
+          </div>
+          <div class="field">
+            <label>Tell us about your space</label>
+            <textarea rows="4" placeholder="Home / office / hotel — size, location, any preferences..."></textarea>
+          </div>
+          <button type="submit" class="btn-send">Send &amp; Get Quote &nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+      <div class="contact-info-stack">
+        <div class="c-info-item">
+          <div class="c-icon"><i class="fa-solid fa-store"></i></div>
+          <div>
+            <div class="c-label">Kelaniya Showroom</div>
+            <div class="c-main">No. 45, Kandy Road, Kelaniya</div>
+            <div class="c-sub">Open daily 8 AM – 8 PM</div>
+          </div>
+        </div>
+        <div class="c-info-item">
+          <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="c-label">Call or WhatsApp</div>
+            <a href="tel:+94763955990" class="c-main">+94 76 395 5990</a>
+            <div class="c-sub">Available 7 days a week</div>
+          </div>
+        </div>
+        <div class="c-info-item">
+          <div class="c-icon" style="color:#4fdc8a;"><i class="fa-brands fa-whatsapp"></i></div>
+          <div>
+            <div class="c-label">WhatsApp</div>
+            <a href="https://wa.me/94763955990" class="c-main">Chat with us instantly</a>
+            <div class="c-sub">Fastest way to get a quote</div>
+          </div>
+        </div>
+        <div class="c-info-item">
+          <div class="c-icon"><i class="fa-brands fa-instagram"></i></div>
+          <div>
+            <div class="c-label">Follow Us</div>
+            <a href="#" class="c-main">@easycoolgroup</a>
+            <div class="c-sub">Tips, deals &amp; cool inspiration</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-mark">ec</div>
+      <p>Official dealer for TCL, Daikin &amp; TECO air conditioners across Sri Lanka. Serving Kelaniya &amp; beyond since 2018.</p>
+      <p class="f-copy">© 2026 EasyCool Group (Pvt) Ltd. All rights reserved.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li>About Us</li>
+        <li>Careers</li>
+        <li>Blog</li>
+        <li>Showroom</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Brands</h5>
+      <ul>
+        <li>TCL</li>
+        <li>Daikin</li>
+        <li>TECO</li>
+        <li>Solar Hybrid</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <ul>
+        <li>Service Request</li>
+        <li>Warranty Check</li>
+        <li>Find Showroom</li>
+        <li>FAQ</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Follow EasyCool</h5>
+      <div class="social-row">
+        <a href="#" class="soc-btn"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" class="soc-btn"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://wa.me/94763955990" class="soc-btn"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#" class="soc-btn"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+      <p style="margin-top:1.8rem;font-size:.68rem;color:rgba(255,255,255,.25);">Made with ❤ for Sri Lanka</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <button class="modal-x" onclick="closeModal()">×</button>
+    <h3 class="modal-h">Get your quote in 60 seconds</h3>
+    <p class="modal-sub">3 quick questions → instant pricing for your space</p>
+    <span class="modal-label">Type of space</span>
+    <div class="pill-row">
+      <div class="pill" onclick="selectPill(this)">Home / Villa</div>
+      <div class="pill" onclick="selectPill(this)">Office / Shop</div>
+      <div class="pill" onclick="selectPill(this)">Hotel / Restaurant</div>
+    </div>
+    <div class="modal-row">
+      <div class="modal-field">
+        <label class="modal-label">Area (sq.ft)</label>
+        <input type="text" value="1200" placeholder="e.g. 1200">
+      </div>
+      <div class="modal-field">
+        <label class="modal-label">Preferred Brand</label>
+        <select>
+          <option>TCL</option>
+          <option>Daikin</option>
+          <option>TECO</option>
+          <option>No preference</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-calc" onclick="submitQuote()">Calculate My Quote →</button>
+  </div>
+</div>
+
+<script>
+/* ── CURSOR ── */
+const cur = document.getElementById('cur'), cur2 = document.getElementById('cur2');
+let mx=0, my=0, cx=0, cy=0;
+document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
+(function loop(){ cx+=(mx-cx)*.15; cy+=(my-cy)*.15; cur2.style.left=Math.round(cx)+'px'; cur2.style.top=Math.round(cy)+'px'; requestAnimationFrame(loop); })();
+document.querySelectorAll('a,button,[onclick],[style*="cursor:none"]').forEach(el => {
+  el.addEventListener('mouseenter',()=>{ cur.style.width='18px'; cur.style.height='18px'; });
+  el.addEventListener('mouseleave',()=>{ cur.style.width='10px'; cur.style.height='10px'; });
+});
+
+/* ── SCROLL PROGRESS ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('prog').style.width = (window.scrollY/(document.documentElement.scrollHeight-window.innerHeight)*100)+'%';
+});
+
+/* ── MOBILE MENU ── */
+function toggleMenu(){
+  const m=document.getElementById('mob-menu'), i=document.getElementById('menuIcon');
+  const open = m.style.display==='flex';
+  m.style.display = open?'none':'flex';
+  i.className = open?'fa-solid fa-bars':'fa-solid fa-xmark';
+}
+
+/* ── MODAL ── */
+function openModal()  { document.getElementById('modal').classList.add('open'); }
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+function selectPill(el){ document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active')); el.classList.add('active'); }
+function submitQuote(){
+  closeModal();
+  setTimeout(()=>alert('Quote ready!\n\nEasyCool Recommendation:\nSystem: TCL 18,000 BTU Smart Inverter\nUnit + Install: Rs. 148,000 (15% launch discount)\n\nOur team will call you within 10 minutes.\nThank you for choosing EasyCool Group!'), 600);
+}
+function handleSubmit(e){
+  e.preventDefault();
+  alert('Thank you! Your quote request has been received.\nWe\'ll contact you within minutes.');
+  e.target.reset();
+}
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+  });
+});
+
+/* ── REVEAL ON SCROLL ── */
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
